@@ -4,7 +4,7 @@
   background-color: $dark-Blue;
   position: fixed;
   width: 400px;
-  // height: 420px;
+  height: 420px;
   margin: auto;
   // padding: 1rem;
   top: 50%;
@@ -12,11 +12,41 @@
   transform: translate(-50%, -50%);
   border-radius: 16px;
 
-  .container {
+  .thank-you-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     margin: 1.5rem;
     margin-bottom: 2rem;
+
+    .thank-you-svg {
+      width: 150px;
+      height: 100px;
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    .selection {
+      display: inline-block;
+      color: $primary-color;
+      background-color: $medium-Grey;
+      border: none;
+      border-radius: 50px;
+      padding: .5rem 1rem;
+      margin: 24px auto 0;
+      max-width: fit-content;
+    }
+
+    .ty {
+      color: $white;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .appreciation {
+      color: $medium-Grey;
+    }
   }
 }

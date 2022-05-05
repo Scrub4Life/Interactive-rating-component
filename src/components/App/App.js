@@ -4,17 +4,47 @@ import ThankYou from "../Thank you/ThankYou";
 import "./App.scss";
 
 function App() {
-  const [tooglePage, setTogglePage] = useState(false);
+  // toggles the page
+  const [tooglePageView, setTogglePageView] = useState(false
+    );
 
-  // const getNumber = (number) => {
-  //   return number;
-  // };
+  const [appState, changeState] = useState({
+    acitveObject: 0,
+    objects: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
+  });
+
+  function toggleActive(index) {
+    changeState({ ...appState, acitveObject: appState.objects[index] });
+  }
+
+  function toggleActiveStyles(index) {
+    if (appState.objects[index] === appState.acitveObject) {
+      return "active";
+    } else {
+      return "btn-li inactive";
+    }
+  }
 
   const handleClick = () => {
-    setTogglePage(true);
+    setTogglePageView(true);
   };
 
-  return <>{tooglePage ? <ThankYou /> : <Card toggle={handleClick} />}</>;
+  let num = appState.acitveObject.id;
+
+  return (
+    <>
+      {tooglePageView ? (
+        <ThankYou selectedNumber={num} />
+      ) : (
+        <Card
+          appState={appState}
+          togglePage={handleClick}
+          toggleActive={toggleActive}
+          toggleActiveStyles={toggleActiveStyles}
+        />
+      )}
+    </>
+  );
 }
 
 export default App;

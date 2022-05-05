@@ -3,7 +3,7 @@
 .card {
   background-color: $dark-Blue;
   position: fixed;
-  width: 400px;
+  // width: 400px;
   // height: 420px;
   margin: auto;
   // padding: 1rem;
@@ -17,6 +17,7 @@
     flex-direction: column;
     margin: 1.5rem;
     margin-bottom: 2rem;
+    
 
     .svg {
       display: flex;

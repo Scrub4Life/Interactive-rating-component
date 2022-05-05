@@ -1,33 +1,7 @@
-import React, { useEffect, useState } from "react";
-// import { compileString } from "sass";
+import React from "react";
 import "./index.scss";
 
-const Card = ({ toggle, getNumber }) => {
-  const [appState, changeState] = useState({
-    acitveObject: 0,
-    objects: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
-  });
-
-  function toggleActive(index) {
-    changeState({ ...appState, acitveObject: appState.objects[index] });
-  }
-
-  function toggleActiveStyles(index) {
-    if (appState.objects[index] === appState.acitveObject) {
-      return "active";
-    } else {
-      return "btn-li inactive";
-    }
-  }
-
-  // var num;
-
-  // useEffect(() => {
-  //   num = appState.acitveObject.id;
-  //   // console.log(num);
-  //   getNumber(num);
-  // });
-
+const Card = ({ togglePage, appState, toggleActiveStyles, toggleActive }) => {
   const svg = (
     <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -63,7 +37,7 @@ const Card = ({ toggle, getNumber }) => {
             );
           })}
         </ul>
-        <button className="btn-submit" onClick={toggle}>
+        <button className="btn-submit" onClick={togglePage}>
           submit
         </button>
       </div>
